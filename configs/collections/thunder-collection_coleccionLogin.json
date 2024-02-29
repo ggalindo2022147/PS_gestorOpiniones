@@ -1,0 +1,47 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "coleccionLogin",
+    "dateExported": "2024-02-29T17:32:18.331Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "60abc42b-f8a8-40d8-8162-039dfe062456",
+            "colId": "4691d288-7117-498b-9c0f-285c8de6a684",
+            "containerId": "",
+            "name": "post loginCorreo",
+            "url": "http://localhost:3000/facebook/v1/auth/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-29T17:06:23.424Z",
+            "modified": "2024-02-29T17:16:23.612Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"correo\": \"jchanquin@gmail.com\",\n  \"password\": \"123123\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "508aaf26-b866-4602-9eae-9907876d740a",
+            "colId": "4691d288-7117-498b-9c0f-285c8de6a684",
+            "containerId": "",
+            "name": "post loginNombreUsuario",
+            "url": "http://localhost:3000/facebook/v1/auth/loginN",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-02-29T17:16:29.400Z",
+            "modified": "2024-02-29T17:18:39.326Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombreUsuario\": \"jchanquin\",\n  \"password\": \"123123\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
