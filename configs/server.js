@@ -5,7 +5,7 @@ import cors from 'cors'
 import helmet from 'helmet'
 import morgan from 'morgan'
 import { dbConnection } from './mongo.js';
-//import dotenv from 'dotenv';
+import authRoutes from '../src/auth/auth.routes.js';
 import userRoutes from '../src/users/user.routes.js';
 
 
@@ -13,6 +13,7 @@ class Server{
     constructor(){
         this.app = express();
         this.port = process.env.PORT;
+        this.authPath = '/facebook/v1/auth'
         this.usuarioPath = '/facebook/v1/users'
 
         this.middlewares();
@@ -33,6 +34,7 @@ class Server{
     }
 
     routes(){
+        this.app.use(this.authPath, authRoutes);
         this.app.use(this.usuarioPath, userRoutes);
     }
 
