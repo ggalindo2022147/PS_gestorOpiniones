@@ -6,3 +6,10 @@ export const existenteEmail = async (correo = '') => {
         throw new Error(`El email ${correo} ya fue registrado`);
     }
 }
+
+export const existenteNombreUsuario = async (nombreUsuario = '') => {
+    const existeNombreUsuario = await User.findOne({ nombreUsuario });
+    if (existeNombreUsuario) {
+        throw new Error(`El nombre de usuario ${nombreUsuario} ya fue registrado`);
+    }
+}

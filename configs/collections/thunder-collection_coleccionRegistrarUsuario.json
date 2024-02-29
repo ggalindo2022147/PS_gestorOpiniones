@@ -1,0 +1,28 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "coleccionRegistrarUsuario",
+    "dateExported": "2024-02-29T16:52:55.400Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "7d35a4ae-b9fd-4c01-8508-cf7419738557",
+            "colId": "8b4ccf9f-aa06-47c9-a4bd-3844a3997fda",
+            "containerId": "",
+            "name": "post usuarios",
+            "url": "http://localhost:3000/facebook/v1/users",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-29T16:43:56.665Z",
+            "modified": "2024-02-29T16:51:04.648Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombreUsuario\": \"jchanquin\",\n  \"correo\": \"jchanquin@gmail.com\",\n  \"password\": \"123123\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
