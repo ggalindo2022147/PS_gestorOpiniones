@@ -7,7 +7,7 @@ import morgan from 'morgan'
 import { dbConnection } from './mongo.js';
 import authRoutes from '../src/auth/auth.routes.js';
 import userRoutes from '../src/users/user.routes.js';
-
+import publicationRoutes from '../src/publications/publication.routes.js';
 
 class Server{
     constructor(){
@@ -15,6 +15,7 @@ class Server{
         this.port = process.env.PORT;
         this.authPath = '/facebook/v1/auth'
         this.usuarioPath = '/facebook/v1/users'
+        this.publicationPath = '/facebook/v1/publications'
 
         this.middlewares();
         this.conectarDB();
@@ -36,6 +37,7 @@ class Server{
     routes(){
         this.app.use(this.authPath, authRoutes);
         this.app.use(this.usuarioPath, userRoutes);
+        this.app.use(this.publicationPath, publicationRoutes);
     }
 
     listen(){
