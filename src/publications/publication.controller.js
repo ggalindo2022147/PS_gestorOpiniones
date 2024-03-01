@@ -30,20 +30,53 @@ export const publicationsPut = async (req, res) => {
 
     const publication = await Publication.findById(id);
 
-    if(publication.autor !== nombreUsuario){
-        return res.status(401).json({
-            msg: "You don't have permission to edit this publication"
-        });
+    if (publication.estado) {
+        if(publication.autor !== nombreUsuario){
+            return res.status(401).json({
+                msg: "You don't have permission to edit this publication"
+            });
+        } else {
+            const {_id, autor, estado, ...resto} = req.body;
+            await Publication.findByIdAndUpdate(id, resto);
+        
+            const publicationUpdate = await Publication.findById(id);
+        
+            res.status(200).json({
+                msg: "Publication updated successfully",
+                publicationUpdate
+            });
+        }
     } else {
-        const {_id, autor, estado, ...resto} = req.body;
-        await Publication.findByIdAndUpdate(id, resto);
-
-        const publicationUpdate = await Publication.findById(id);
-
-        res.status(200).json({
-            msg: "Publication updated successfully",
-            publicationUpdate
+        return res.status(400).json({
+            msg: "You cannot update the publication because it is not active"
         });
     }
-
 };
+
+export const publicationsDelete = async (req, res) => {                                                         
+    
+    const {id} = req.params;
+    const nombreUsuario = req.usuario.nombreUsuario;
+
+    const publication = await Publication.findById(id);
+
+    if (publication.estado) {
+        if(publication.autor !== nombreUsuario){
+            return res.status(401).json({
+                msg: "You don't have permission to delete this publication"
+            });
+        } else {
+            await Publication.findByIdAndUpdate(id, {estado: false});
+            const publicationDel = await Publication.findById(id);
+    
+            res.status(200).json({
+                msg: "Publication deleted successfully",
+                publicationDel
+            });
+        };
+    } else {
+        return res.status(400).json({
+            msg: "You cannot delete the publication because it is not active"
+        });
+    }
+}
