@@ -1,0 +1,33 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "coleccionActualizarUsuario",
+    "dateExported": "2024-03-01T23:13:39.331Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "04f7033b-f340-49ba-9d40-bbc74beb4f06",
+            "colId": "f1a225a0-eab8-4ea0-be97-a4ec296694c2",
+            "containerId": "",
+            "name": "put actualizarUsuario",
+            "url": "http://localhost:3000/facebook/v1/users/65e22753fb60110fc4f915a2",
+            "method": "PUT",
+            "sortNum": 10000,
+            "created": "2024-03-01T22:54:38.989Z",
+            "modified": "2024-03-01T23:12:38.914Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUyMjc1M2ZiNjAxMTBmYzRmOTE1YTIiLCJpYXQiOjE3MDkzMzQ3MzYsImV4cCI6MTcwOTMzODMzNn0.tBGv4aSMyvgP13_dGr6vw7j28_MfnvY6tnEIid68E3M"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"correo\": \"jchan@gmail.com\",\n  \"password\": \"456123\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
