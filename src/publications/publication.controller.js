@@ -18,8 +18,32 @@ export const publicationsGet = async (req, res) => {
     const publications = await Publication.find({estado: true});
     const total = await Publication.countDocuments({estado: true});
     res.status(200).json({
-        msg: "Publicaciones obtenidas correctamente",
+        msg: "Publications obtained successfully",
         total,
         publications
     });
+};
+
+export const publicationsPut = async (req, res) => {
+    const {id} = req.params;
+    const nombreUsuario = req.usuario.nombreUsuario;
+
+    const publication = await Publication.findById(id);
+
+    if(publication.autor !== nombreUsuario){
+        return res.status(401).json({
+            msg: "You don't have permission to edit this publication"
+        });
+    } else {
+        const {_id, autor, estado, ...resto} = req.body;
+        await Publication.findByIdAndUpdate(id, resto);
+
+        const publicationUpdate = await Publication.findById(id);
+
+        res.status(200).json({
+            msg: "Publication updated successfully",
+            publicationUpdate
+        });
+    }
+
 };
