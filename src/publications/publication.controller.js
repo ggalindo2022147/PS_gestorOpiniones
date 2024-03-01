@@ -13,3 +13,13 @@ export const publicationsPost = async (req, res) => {
         publication
     });
 };
+
+export const publicationsGet = async (req, res) => {
+    const publications = await Publication.find({estado: true});
+    const total = await Publication.countDocuments({estado: true});
+    res.status(200).json({
+        msg: "Publicaciones obtenidas correctamente",
+        total,
+        publications
+    });
+};
