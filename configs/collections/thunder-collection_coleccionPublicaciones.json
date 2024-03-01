@@ -1,0 +1,162 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "coleccionPublicaciones",
+    "dateExported": "2024-03-01T22:51:46.490Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "39cb040a-3e31-4649-ab4d-d5c466bcc30a",
+            "colId": "95713183-3985-4e2f-b67c-89a0000b15bb",
+            "containerId": "",
+            "name": "post agregarPublicacion",
+            "url": "http://localhost:3000/facebook/v1/publications",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-01T18:52:36.937Z",
+            "modified": "2024-03-01T19:07:14.719Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUyMjc1M2ZiNjAxMTBmYzRmOTE1YTIiLCJpYXQiOjE3MDkzMjAwMjMsImV4cCI6MTcwOTMyMzYyM30.o0mBVDnKiZxOWGr1tI6GvjzaFwC8Q4lYTj-gJPyUhho"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"titulo\": \"Vecinos\",\n  \"categoria\": \"serie\",\n  \"contenido\": \"Es una serie de television ideal para ver en familia\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "ec145b32-e468-42b7-a276-9eba25d2b111",
+            "colId": "95713183-3985-4e2f-b67c-89a0000b15bb",
+            "containerId": "",
+            "name": "get mostrarPublicaciones",
+            "url": "http://localhost:3000/facebook/v1/publications",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-03-01T20:22:56.562Z",
+            "modified": "2024-03-01T20:23:43.806Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUyMjc1M2ZiNjAxMTBmYzRmOTE1YTIiLCJpYXQiOjE3MDkzMjQ2MTMsImV4cCI6MTcwOTMyODIxM30.T-EIEMoS4jDWm8E0evYAHcJOCTb_JfsTZD3yAsSvDdo"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c6de0e3e-ba01-44d2-af69-c05cb382706c",
+            "colId": "95713183-3985-4e2f-b67c-89a0000b15bb",
+            "containerId": "",
+            "name": "put actualizarMiPublicacion",
+            "url": "http://localhost:3000/facebook/v1/publications/updatePublication/65e2287a503f638500e01d86",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-03-01T20:34:55.713Z",
+            "modified": "2024-03-01T21:21:37.021Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUyM2QzMzI0YjI2N2M2MGI5N2FkYjgiLCJpYXQiOjE3MDkzMjgwNjIsImV4cCI6MTcwOTMzMTY2Mn0.RmAOH7IeB75ggytfpL01cOxktrH0snxXjKioVKAr_58"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"titulo\": \"La navidad\",\n  \"categoria\": \"Informacion\",\n  \"contenido\": \"Es en diciembre\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "5cc5c135-3cb5-4e02-93db-7ae0945a6cd2",
+            "colId": "95713183-3985-4e2f-b67c-89a0000b15bb",
+            "containerId": "",
+            "name": "delete eliminarMiPublicacion",
+            "url": "http://localhost:3000/facebook/v1/publications/delete/65e2287a503f638500e01d86",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-03-01T21:24:55.205Z",
+            "modified": "2024-03-01T21:31:45.509Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUyM2QzMzI0YjI2N2M2MGI5N2FkYjgiLCJpYXQiOjE3MDkzMjgwNjIsImV4cCI6MTcwOTMzMTY2Mn0.RmAOH7IeB75ggytfpL01cOxktrH0snxXjKioVKAr_58"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "38cb6b88-d414-4904-9012-75588e16b075",
+            "colId": "95713183-3985-4e2f-b67c-89a0000b15bb",
+            "containerId": "",
+            "name": "put agregarComentario",
+            "url": "http://localhost:3000/facebook/v1/publications/addComment/65e2287a503f638500e01d86",
+            "method": "PUT",
+            "sortNum": 60000,
+            "created": "2024-03-01T21:56:33.423Z",
+            "modified": "2024-03-01T22:22:29.822Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUyM2QzMzI0YjI2N2M2MGI5N2FkYjgiLCJpYXQiOjE3MDkzMzE3NDAsImV4cCI6MTcwOTMzNTM0MH0.1QQvoUVnE-5WfS6ojmzQuRKJqozH8eOPArceC-1zNeA"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"descripcion\": \"Tienes toda la razon, jajajaja\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "0240dda2-f0e6-4049-99e6-a3ad4979399e",
+            "colId": "95713183-3985-4e2f-b67c-89a0000b15bb",
+            "containerId": "",
+            "name": "put editarMiComentario",
+            "url": "http://localhost:3000/facebook/v1/publications/updateMyComment/65e2287a503f638500e01d86/65e25525542165e239cc52f4",
+            "method": "PUT",
+            "sortNum": 70000,
+            "created": "2024-03-01T22:17:17.446Z",
+            "modified": "2024-03-01T22:39:57.319Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUyM2QzMzI0YjI2N2M2MGI5N2FkYjgiLCJpYXQiOjE3MDkzMzE3NDAsImV4cCI6MTcwOTMzNTM0MH0.1QQvoUVnE-5WfS6ojmzQuRKJqozH8eOPArceC-1zNeA"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"descripcion\": \"Hola, soy nuevo aqui, saludos desde paris\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "babe51d8-9e5b-440e-bb0b-383a58793bb0",
+            "colId": "95713183-3985-4e2f-b67c-89a0000b15bb",
+            "containerId": "",
+            "name": "delete eliminarMiComentario",
+            "url": "http://localhost:3000/facebook/v1/publications/deleteMyComment/65e2287a503f638500e01d86/65e25525542165e239cc52f4",
+            "method": "DELETE",
+            "sortNum": 80000,
+            "created": "2024-03-01T22:47:02.958Z",
+            "modified": "2024-03-01T22:50:03.958Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUyM2QzMzI0YjI2N2M2MGI5N2FkYjgiLCJpYXQiOjE3MDkzMzMzMTMsImV4cCI6MTcwOTMzNjkxM30.ldKbM3tRiCrpSnhKVoX4p9AcqiohzjrSQ85E4auUx5o"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
