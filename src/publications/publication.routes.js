@@ -45,6 +45,14 @@ router.put(
         check("idComentario", "The id is not valid").isMongoId(),
     ], updateMyComment);
 
+router.delete(
+    "/deleteMyComment/:idPublicacion/:idComentario",
+    [
+        validarJWT,
+        check("idPublicacion", "The id is not valid").isMongoId(),
+        check("idComentario", "The id is not valid").isMongoId(),
+    ], updateMyComment);
+
 
 
 export default router;

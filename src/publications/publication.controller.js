@@ -117,27 +117,26 @@ export const updateMyComment = async (req, res) => {
     if (publication.estado) {
         const comentario = publication.comentarios.id(idComentario);
         if (comentario.usuario === nombreUsuario) {
-            const { _id, ...rest } = req.body;
 
             await Publication.findOneAndUpdate(
-                { _id: idPublicacion, "comentarios._id": idComentario },
-                { $set: { "comentarios.$.descripcion": rest.descripcion,  "comentarios.$.usuario": nombreUsuario } }
+                { _id: idPublicacion },
+                { $pull: { comentarios: { _id: idComentario } } }
             );
 
-            const publicationN = await Publication.findOne({ _id: idPublicacion });
+            const publicationUpdate = await Publication.findOne({ _id: idPublicacion });
 
             res.status(200).json({
-                msg: "Comment updated successfully",
-                publicationN
+                msg: "Comment deleted successfully",
+                publicationUpdate
             });
-        } else {
-            return res.status(401).json({
-                msg: "You don't have permission to edit this comment"
-            });
-        }
     } else {
-        return res.status(400).json({
-            msg: "You cannot update the comment because the publication is not active"
+        return res.status(401).json({
+            msg: "You don't have permission to delete this comment"
         });
     }
+} else {
+    return res.status(400).json({
+        msg: "You cannot delete the comment because the publication is not active"
+    });
+}
 };
