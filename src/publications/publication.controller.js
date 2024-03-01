@@ -106,4 +106,38 @@ export const addComment = async (req, res) => {
             msg: "You cannot add a comment to the publication because it is not active"
         });
     }
-}
+};
+
+export const updateMyComment = async (req, res) => {                                                        
+    const {idPublicacion, idComentario} = req.params;
+    const nombreUsuario = req.usuario.nombreUsuario;
+
+    const publication = await Publication.findById(idPublicacion);
+
+    if (publication.estado) {
+        const comentario = publication.comentarios.id(idComentario);
+        if (comentario.usuario === nombreUsuario) {
+            const { _id, ...rest } = req.body;
+
+            await Publication.findOneAndUpdate(
+                { _id: idPublicacion, "comentarios._id": idComentario },
+                { $set: { "comentarios.$.descripcion": rest.descripcion,  "comentarios.$.usuario": nombreUsuario } }
+            );
+
+            const publicationN = await Publication.findOne({ _id: idPublicacion });
+
+            res.status(200).json({
+                msg: "Comment updated successfully",
+                publicationN
+            });
+        } else {
+            return res.status(401).json({
+                msg: "You don't have permission to edit this comment"
+            });
+        }
+    } else {
+        return res.status(400).json({
+            msg: "You cannot update the comment because the publication is not active"
+        });
+    }
+};
