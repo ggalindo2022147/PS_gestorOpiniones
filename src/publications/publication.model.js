@@ -24,7 +24,7 @@ const PublicationSchema = mongoose.Schema({
         usuario: {
             type: String,
         },
-        comentario: {
+        descripcion: {
             type: String,
         },
     }],

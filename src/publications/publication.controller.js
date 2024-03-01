@@ -80,3 +80,30 @@ export const publicationsDelete = async (req, res) => {
         });
     }
 }
+
+export const addComment = async (req, res) => {
+    const {id} = req.params;
+    const nombreUsuarioT = req.usuario.nombreUsuario;
+
+    const publication = await Publication.findById(id);
+
+    if (publication.estado) {
+        const { _id, autor, estado, ...resto } = req.body;
+        console.log(nombreUsuarioT);
+        const comentario = { usuario: nombreUsuarioT, ...resto };
+
+        await Publication.findByIdAndUpdate(id, { $push: { comentarios: comentario } });
+
+        console.log(id, { $push: { comentarios: comentario } });
+        const publicationUpdate = await Publication.findById(id);
+
+        res.status(200).json({
+            msg: "Comment added successfully",
+            publicationUpdate
+        });
+    } else {
+        return res.status(400).json({
+            msg: "You cannot add a comment to the publication because it is not active"
+        });
+    }
+}
